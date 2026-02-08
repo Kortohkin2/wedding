@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу Артёма и Вики | 24 июля 2026 | Кострома</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background-color: #fdfdfd;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Секция героя - летняя тематика */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(240, 249, 255, 0.85), rgba(240, 255, 250, 0.8)),
+            url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #2d3748;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            margin-bottom: 1rem;
+            color: #2d5468;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        .hero .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #4a7c6e;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        .date {
+            font-size: 2rem;
+            margin-top: 2rem;
+            padding: 18px 45px;
+            background-color: rgba(173, 216, 230, 0.25);
+            border-radius: 50px;
+            color: #2d5468;
+            border: 1px solid #b0d4e3;
+            backdrop-filter: blur(5px);
+            font-family: 'Cormorant Garamond', serif;
+            box-shadow: 0 5px 15px rgba(100, 179, 209, 0.2);
+        }
+
+        .location {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #4a7c6e;
+            font-weight: 500;
+        }
+
+        /* Летние декоративные элементы */
+        .summer-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ffb6c1;
+            opacity: 0.6;
+        }
+
+        .flower:nth-child(1) { top: 15%; left: 10%; }
+        .flower:nth-child(2) { top: 25%; right: 15%; }
+        .flower:nth-child(3) { bottom: 20%; left: 20%; }
+        .flower:nth-child(4) { bottom: 30%; right: 10%; }
+
+        /* Секция истории */
+        .story {
+            padding: 100px 0;
+            background-color: #f7fcfd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(247, 252, 253, 1), rgba(247, 252, 253, 0));
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2d5468;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(to right, #a8e6cf, #64b3d1);
+        }
+
+        .couple-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 80px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .person {
+            text-align: center;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .person-photo-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(168, 230, 207, 0.25);
+            border: 10px solid white;
+            transition: transform 0.5s ease;
+        }
+
+        .person-photo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .person-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .person-photo.active {
+            opacity: 1;
+        }
+
+        .photo-indicators {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .photo-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #c1e1ec;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-indicator.active {
+            background-color: #4a7c6e;
+            transform: scale(1.3);
+        }
+
+        .photo-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #2d5468;
+            font-size: 0.9rem;
+            z-index: 5;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .person h3 {
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+            color: #2d5468;
+        }
+
+        .person p {
+            font-size: 1.15rem;
+            color: #5a6c7d;
+        }
+
+        .heart {
+            font-size: 4rem;
+            color: #ff7eb3;
+            margin: 40px 0;
+            text-shadow: 0 4px 8px rgba(255, 126, 179, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .story-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            text-align: center;
+            line-height: 1.8;
+            color: #5a6c7d;
+            padding: 45px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(168, 230, 207, 0.15);
+            border: 1px solid #e8f4f8;
+            position: relative;
+        }
+
+        .story-text::before {
+            content: "💫";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: white;
+            padding: 0 15px;
+        }
+
+        /* Современный блок с фотографиями молодоженов */
+        .couple-photos {
+            padding: 100px 0;
+            background-color: #f0f9f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .couple-photos::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(240, 249, 245, 1), rgba(240, 249, 245, 0));
+            z-index: 1;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 120px);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(168, 230, 207, 0.3);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-item.large {
+            grid-column: span 6;
+            grid-row: span 3;
+        }
+
+        .photo-item.medium {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        .photo-item.small {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+
+        .photo-item.tall {
+            grid-column: span 3;
+            grid-row: span 4;
+        }
+
+        .photo-item.wide {
+            grid-column: span 8;
+            grid-row: span 2;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 20px;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Адаптивность для фото-грида */
+        @media (max-width: 1100px) {
+            .photos-grid {
+                grid-template-rows: repeat(6, 100px);
+                gap: 15px;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photos-grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(8, 90px);
+                gap: 10px;
+            }
+
+            .photo-item.large {
+                grid-column: span 6;
+                grid-row: span 3;
+            }
+
+            .photo-item.medium {
+                grid-column: span 3;
+                grid-row: span 2;
+            }
+
+            .photo-item.small {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .photo-item.tall {
+                grid-column: span 2;
+                grid-row: span 4;
+            }
+
+            .photo-item.wide {
+                grid-column: span 6;
+                grid-row: span 2;
+            }
+
+            .photo-caption {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .person-photo-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .person {
+                max-width: 320px;
+            }
+        }
+
+        /* Секция деталей - летний стиль */
+        .details {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .details::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            z-index: 1;
+        }
+
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 40px;
+        }
+
+        .detail-card {
+            background-color: #f7fcfd;
+            padding: 45px 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(168, 230, 207, 0.15);
+            border: 1px solid #e8f4f8;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #a8e6cf, #64b3d1, #ffb6c1);
+        }
+
+        .detail-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(168, 230, 207, 0.25);
+        }
+
+        .detail-icon {
+            font-size: 3rem;
+            color: #4a7c6e;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #a8e6cf, #64b3d1, #ffb6c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .detail-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2d5468;
+        }
+
+        .detail-card p {
+            margin-bottom: 10px;
+            color: #5a6c7d;
+            font-size: 1.1rem;
+        }
+
+        /* Секция с фотографиями мест проведения (слайдер) */
+        .location-slider-section {
+            padding: 100px 0;
+            background-color: #f7fcfd;
+            position: relative;
+        }
+
+        .location-slider-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .location-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(168, 230, 207, 0.25);
+            height: 500px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 30px;
+            font-size: 1.3rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .slider-btn {
+            background: linear-gradient(to right, #64b3d1, #4a7c6e);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(100, 179, 209, 0.4);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 15px;
+        }
+
+        .slider-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #c1e1ec;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: #4a7c6e;
+            transform: scale(1.2);
+        }
+
+        /* Секция с картами */
+        .maps-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .maps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .map-card {
+            background-color: #f7fcfd;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(168, 230, 207, 0.15);
+            border: 1px solid #e8f4f8;
+            transition: transform 0.3s ease;
+        }
+
+        .map-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .map-header {
+            padding: 25px;
+            background: linear-gradient(to right, #a8e6cf, #64b3d1);
+            color: white;
+            text-align: center;
+        }
+
+        .map-header h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .map-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .map-content {
+            padding: 25px;
+        }
+
+        .address-details {
+            margin-bottom: 25px;
+        }
+
+        .address-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .address-details i {
+            color: #4a7c6e;
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .map-wrapper {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e8f4f8;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Таймер для летней свадьбы */
+        .countdown {
+            background: linear-gradient(135deg, #a8e6cf 0%, #64b3d1 50%, #4a7c6e 100%);
+            color: white;
+            padding: 90px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .countdown-title {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 30px 25px;
+            border-radius: 15px;
+            min-width: 150px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: scale(1.05);
+        }
+
+        .countdown-number {
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.95;
+        }
+
+        /* Секция Google Формы */
+        .rsvp {
+            padding: 100px 0;
+            background-color: #f7fcfd;
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 55px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(168, 230, 207, 0.2);
+            border: 1px solid #e0f2e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #a8e6cf, #64b3d1, #ffb6c1);
+        }
+
+        .form-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-info p {
+            margin-bottom: 15px;
+            color: #5a6c7d;
+            font-size: 1.15rem;
+        }
+
+        .google-form-container {
+            width: 100%;
+            height: 800px;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #e0f2e9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .google-form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .form-alternative {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #e8f4f8;
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(to right, #2d5468, #1e3a4d);
+            color: #e2f1f8;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: #fff;
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 35px 0 45px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #a8e6cf;
+            color: #2d5468;
+            transform: translateY(-5px) rotate(10deg);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.95rem;
+            color: #b0d4e3;
+        }
+
+        /* Кнопка */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #64b3d1, #4a7c6e);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(100, 179, 209, 0.3);
+            font-family: 'Open Sans', sans-serif;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #4a7c6e, #64b3d1);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(100, 179, 209, 0.4);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .maps-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .map-wrapper {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            .person-photo-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .countdown-container {
+                gap: 15px;
+            }
+
+            .countdown-item {
+                min-width: 120px;
+                padding: 20px 15px;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .form-container {
+                padding: 35px 25px;
+            }
+
+            .google-form-container {
+                height: 700px;
+            }
+
+            .story-text {
+                padding: 35px 25px;
+            }
+
+            .couple-container {
+                gap: 40px;
+            }
+
+            .details-container {
+                gap: 25px;
+            }
+
+            .location-slider {
+                height: 400px;
+            }
+
+            .slide-caption {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+
+            .location {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Анимация появления элементов */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Инструкция по Google Форме */
+        .instructions {
+            background-color: #f0f9ff;
+            border-left: 5px solid #64b3d1;
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #e0f2ff;
+            position: relative;
+        }
+
+        .instructions h3 {
+            color: #2d5468;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            padding-left: 22px;
+            margin-bottom: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 12px;
+            color: #5a6c7d;
+        }
+
+        pre {
+            background: #f7fcfd;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid #e8f4f8;
+            font-size: 0.95rem;
+            color: #2d5468;
+            margin-top: 15px;
+        }
+
+        /* Декоративные элементы для лета */
+        .summer-divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #64b3d1;
+            font-size: 2.2rem;
+            letter-spacing: 15px;
+            position: relative;
+        }
+
+        .summer-divider::before {
+            content: "🌿";
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+        }
+
+        .summer-divider::after {
+            content: "🌿";
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+        }
+
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #a8e6cf, #64b3d1);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #8cd8bb, #4a9bb9);
+        }
+
+        /* Кнопка открыть в картах */
+        .map-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #64b3d1, #4a7c6e);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 179, 209, 0.3);
+        }
+    </style>
+</head>
+<body>
+<!-- Герой-секция -->
+<section class="hero" id="home">
+    <div class="summer-decorations">
+        <div class="flower">🌸</div>
+        <div class="flower">🌺</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+    </div>
+
+    <h1>Артём & Вика</h1>
+    <div class="subtitle">Приглашают вас на свою летнюю свадьбу</div>
+    <p>Мы будем рады разделить с вами самый тёплый и солнечный день нашего лета, который станет началом нашей семейной жизни</p>
+    <div class="date">24 июля 2026 года</div>
+    <div class="location">Кострома, Россия</div>
+    <a href="#rsvp" class="btn" style="margin-top: 50px; z-index: 2;">Подтвердить участие</a>
+</section>
+
+<!-- Летний разделитель -->
+<div class="summer-divider">
+    <i class="fas fa-heart"></i>
+</div>
+
+<!-- Секция истории -->
+<section class="story" id="story">
+    <div class="container">
+        <h2 class="section-title fade-in">Наша летняя история</h2>
+        <div class="couple-container">
+            <div class="person fade-in">
+                <div class="person-photo-container" id="bride-photos">
+                    <div class="photo-counter">1/3</div>
+                    <!-- Фото Вики 1 -->
+                    <img src="img/В.png"
+                         alt="Вика фото 1" class="person-photo active">
+
+                    <div class="photo-indicators">
+                        <button class="photo-indicator active" data-index="0"></button>
+                        <button class="photo-indicator" data-index="1"></button>
+                    </div>
+                </div>
+                <h3>Вика</h3>
+                <p>тЕКСТ</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #4a7c6e;">
+                    <i class="fas fa-mouse-pointer"></i> Кликните на фото или свайпните на телефоне
+                </p>
+            </div>
+
+            <div class="heart fade-in">
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <div class="person fade-in">
+                <div class="person-photo-container" id="groom-photos">
+                    <div class="photo-counter">1/4</div>
+                    <!-- Фото Артёма 1 -->
+                    <img src="img/А.png"
+                         alt="Артём фото 1" class="person-photo active">
+                    <!-- Фото Артёма 2 -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Артём фото 2" class="person-photo">
+
+                    <div class="photo-indicators">
+                        <button class="photo-indicator active" data-index="0"></button>
+                        <button class="photo-indicator" data-index="1"></button>
+
+                    </div>
+                </div>
+                <h3>Артём</h3>
+                <p>Текст</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #4a7c6e;">
+                    <i class="fas fa-mouse-pointer"></i> Кликните на фото или свайпните на телефоне
+                </p>
+            </div>
+        </div>
+
+        <div class="story-text fade-in">
+            <p>Текст.</p>
+            <p>тЕКСТ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Современный блок с фотографиями молодоженов -->
+<section class="couple-photos fade-in" id="photos">
+    <div class="container">
+        <h2 class="section-title">Наши любимые моменты</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #5a6c7d; font-size: 1.2rem;">
+            Несколько фотографий, которые расскажут о нас больше, чем слова
+        </p>
+
+        <div class="photos-grid">
+            <!-- Большая центральная фотография -->
+            <div class="photo-item large">
+                <img src="img/АВ1.jpg" alt="Артём и Вика вместе">
+                <div class="photo-caption">Наша первая совместная поездка на море</div>
+            </div>
+
+            <!-- Высокая фотография -->
+            <div class="photo-item tall">
+                <img src="img/АВ2.jpg" alt="Момент предложения">
+                <div class="photo-caption">Тот самый момент, когда Артём сделал предложение</div>
+            </div>
+
+            <!-- Средняя фотография -->
+            <div class="photo-item medium">
+                <img src="img/АВ3.jpg" alt="Прогулка по городу">
+                <div class="photo-caption">Летняя прогулка по историческому центру Костромы</div>
+            </div>
+
+            <!-- Широкая фотография -->
+            <div class="photo-item wide">
+                <img src="img/АВ4.jpg" alt="Отдых на природе">
+                <div class="photo-caption">Выходные на природе в Костромской области</div>
+            </div>
+
+            <!-- Маленькие фотографии -->
+            <div class="photo-item small">
+                <img src="img/АВ5.jpg" alt="Вика улыбается">
+                <div class="photo-caption">Вика в любимой кофейне</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Летний разделитель -->
+<div class="summer-divider">
+    <i class="fas fa-sun"></i>
+</div>
+
+<!-- Секция деталей -->
+<section class="details" id="details">
+    <div class="container">
+        <h2 class="section-title fade-in">Детали летней свадьбы</h2>
+        <div class="details-container">
+            <div class="detail-card fade-in">
+                <div class="detail-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+                <h3>Церемония в ЗАГСе</h3>
+                <p>24 июля 2026, 12:20</p>
+                <p>Костромской городской ЗАГС</p>
+                <p>ул. Никитская, 96, Кострома</p>
+                <p><em>Сбор гостей в 12:00 у входа в ЗАГС</em></p>
+            </div>
+
+            <div class="detail-card fade-in">
+                <div class="detail-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+                <h3>Летний банкет</h3>
+                <p>24 июля 2026, 16:00</p>
+                <p>Гранд Отель & SPA «Аристократъ»</p>
+                <p>пос. Молодёжный, 1А, Красносельский район</p>
+                <p><em>Банкет пройдёт в банкетном зале с видом на природу</em></p>
+            </div>
+
+            <div class="detail-card fade-in">
+                <div class="detail-icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <h3>Трансфер</h3>
+                <p>Для гостей будет организован трансфер до места банкета.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Секция с фотографиями мест проведения (слайдер) -->
+<section class="location-slider-section fade-in" id="location">
+    <div class="container">
+        <h2 class="section-title">Места нашей свадьбы в Костроме</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #5a6c7d; font-size: 1.2rem;">
+            Посмотрите фотографии мест, где пройдёт наша свадьба.
+        </p>
+
+        <div class="location-slider-container">
+            <div class="location-slider">
+                <div class="slider-track">
+                    <div class="slider-slide">
+                        <img src="img/6.png" alt="ЗАГС Кострома">
+                        <div class="slide-caption">Костромской городской ЗАГС — место официальной церемонии</div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="img/4.jpg" alt="Гранд Отель Аристократ">
+                        <div class="slide-caption">Гранд Отель & SPA «Аристократъ» — место проведения банкета</div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="img/1.jpg" alt="Природа Костромской области">
+                        <div class="slide-caption">Живописная природа Костромской области вокруг отеля</div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="img/2.jpg" alt="Банкетный зал">
+                        <div class="slide-caption">Празднично украшенный банкетный зал в отеле «Аристократъ»</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-dots">
+                    <button class="slider-dot active" data-slide="0"></button>
+                    <button class="slider-dot" data-slide="1"></button>
+                    <button class="slider-dot" data-slide="2"></button>
+                    <button class="slider-dot" data-slide="3"></button>
+                </div>
+
+                <button class="slider-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Секция с картами -->
+<section class="maps-section fade-in" id="maps">
+    <div class="container">
+        <h2 class="section-title">Как добраться</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #5a6c7d; font-size: 1.2rem;">
+            Свадьба пройдёт в двух локациях в Костроме и Костромской области. Ниже вы найдёте карты и адреса обоих мест.
+        </p>
+
+        <div class="maps-container">
+            <!-- Карта ЗАГСа -->
+            <div class="map-card">
+                <div class="map-header">
+                    <h3>ЗАГС — церемония</h3>
+                    <p>12:20, 24 июля 2026</p>
+                </div>
+                <div class="map-content">
+                    <div class="address-details">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                                    <strong>Адрес:</strong><br>
+                                    ул. Никитская, 96<br>
+                                    Кострома, Костромская обл., 156000
+                                </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            <span>
+                                    <strong>Время сбора гостей:</strong><br>
+                                    12:00 у входа в ЗАГС
+                                </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-info-circle"></i>
+                            <span>
+                                    <strong>Парковка:</strong><br>
+                                    Имеется парковка рядом со зданием ЗАГСа
+                                </span>
+                        </p>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <!-- Яндекс.Карта ЗАГСа в Костроме -->
+                        <iframe class="map-frame"
+                                src="https://yandex.ru/map-widget/v1/?ll=40.968316%2C57.764441&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0NDcwNTkwMDA4Eo4B0KDQvtGB0YHQuNGPLCDQmtC-0YHRgtC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwK0JrQvtGB0YLQvtCy0YHQutCw0Y8sINC00LjQt9Cw0YbQuNC-0L3QvdCw0Y8g0LrQvtC70L7QvdC60LAsINC90LDRgdGC0L7QstCw0Y8g0YPQu9C40YbQsCwgOTYiCg1mRhZCFYJSX0I%2C&z=16"
+                                allowfullscreen="true">
+                        </iframe>
+                    </div>
+
+                    <a href="https://yandex.ru/maps/7/kostroma/house/nikitskaya_ulitsa_96/YEkYfwFoQEQAQFttfXt3dX1iZQ==/?ll=40.968954%2C57.764350&z=17.4" target="_blank" class="map-btn">
+                        <i class="fas fa-external-link-alt"></i> Открыть в Яндекс.Картах
+                    </a>
+                </div>
+            </div>
+            <!-- Карта банкета -->
+            <div class="map-card">
+                <div class="map-header">
+                    <h3>Банкет — праздник</h3>
+                    <p>16:00, 24 июля 2026</p>
+                </div>
+                <div class="map-content">
+                    <div class="address-details">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                                    <strong>Адрес:</strong><br>
+                                    пос. Молодёжный, 1А<br>
+                                    Красносельский район, Костромская обл.
+                                </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-hotel"></i>
+                            <span>
+                                    <strong>Место:</strong><br>
+                                    Гранд Отель & SPA «Аристократъ»
+                                </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-car"></i>
+                            <span>
+                                    <strong>Расстояние от города:</strong><br>
+                                    Около 30 км от центра Костромы, 40 минут езды
+                                </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-info-circle"></i>
+                            <span>
+                                    <strong>Трансфер:</strong><br>
+                                    Для гостей будет организован трансфер до места банкета
+                                </span>
+                        </p>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <!-- Яндекс.Карта отеля Аристократ -->
+                        <iframe class="map-frame"
+                                src="https://yandex.ru/map-widget/v1/?ll=41.091904%2C57.641035&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0OTg1MTY1MjM3EoUB0KDQvtGB0YHQuNGPLCDQmtC-0YHRgtC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0JrRgNCw0YHQvdC-0Y_RgNC10LvRjNC90LDRjyDRgNCw0LfQstC70LXQvdC40LUg0LrRgNC10LTQu9C40L3QsCwg0L_QvtC70L7RgdC60L7QstGB0LrQsNGPINCc0L7Qu9C00LDRgNGD0L3RhtC40Y8sIDHQsCIKDYJNCFlCFScUX0I%2C&z=14"
+                                allowfullscreen="true">
+                        </iframe>
+                    </div>
+                    <a href="https://yandex.ru/maps/10699/kostroma-oblast/house/territoriya_pansionata_otdykha_volgar_1/YEgYdg5hTkEDQFttfXp1cH1rZg==/?ll=41.092864%2C57.641251&z=17.75" target="_blank" class="map-btn">
+                        <i class="fas fa-external-link-alt"></i> Открыть в Яндекс.Картах
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="color: #5a6c7d; font-size: 1.1rem;">
+                <i class="fas fa-info-circle" style="color: #4a7c6e; margin-right: 10px;"></i>
+                <strong>Рекомендация:</strong> Если вы планируете ехать на собственном транспорте, рекомендуем выехать из Костромы заранее, так как дорога до отеля занимает около 40 минут.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Таймер обратного отсчета -->
+<section class="countdown" id="countdown">
+    <div class="container">
+        <h2 class="countdown-title">До нашей летней свадьбы осталось</h2>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Дней</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Часов</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Минут</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Секунд</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Летний разделитель -->
+<div class="summer-divider">
+    <i class="fas fa-star"></i>
+</div>
+
+<!-- Секция Google Формы -->
+<section class="rsvp" id="rsvp">
+    <div class="container">
+        <h2 class="section-title fade-in">Подтвердите участие</h2>
+
+        <div class="form-info fade-in">
+            <p><strong>Пожалуйста, заполните форму ниже, чтобы подтвердить свое участие</strong>.</p>
+            <p>Это поможет нам лучше организовать наш летний праздник и забронировать для вас места.</p>
+            <p><em>Просьба указать, нужен ли вам будет трансфер от ЗАГСа до места банкета.</em></p>
+        </div>
+
+        <div class="form-container fade-in">
+            <!-- ВСТАВЬТЕ СВОЙ КОД GOOGLE ФОРМЫ ЗДЕСЬ -->
+            <div class="google-form-container">
+                <!-- ПРИМЕР GOOGLE ФОРМЫ (замените на свою) -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxBu8HlnQHi8uzYTEe8K7mtbAVPaLRFOeGmeCTCpjvi1HrIg/viewform?embedded=true" width="640" height="381" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+            </div>
+
+            <div class="form-alternative">
+                <p>Если форма не загружается, вы можете <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxBu8HlnQHi8uzYTEe8K7mtbAVPaLRFOeGmeCTCpjvi1HrIg/viewform?usp=dialog" target="_blank" style="color: #4a7c6e; font-weight: 500; text-decoration: underline;">открыть ее в отдельном окне</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer>
+    <div class="container">
+        <h3>С любовью, Артём и Вика</h3>
+        <p>24 июля 2026 года в самый разгар лета мы станем семьёй и будем бесконечно рады разделить этот солнечный день с вами в нашем родном городе Кострома</p>
+
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <p>По всем вопросам: +7 (999) 456-78-90 | wedding.artemvika@example.com</p>
+        <p>Для гостей из других городов можем порекомендовать отели в центре Костромы с выгодными тарифами</p>
+
+        <div class="copyright">
+            © 2026 Летняя свадьба Артёма и Вики в Костроме. Солнечный день нашей любви.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Обратный отсчет до свадьбы 24 июля 2026
+    function updateCountdown() {
+        const weddingDate = new Date('July 24, 2026 14:00:00').getTime();
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+
+        if (timeLeft < 0) {
+            document.getElementById('days').innerHTML = "00";
+            document.getElementById('hours').innerHTML = "00";
+            document.getElementById('minutes').innerHTML = "00";
+            document.getElementById('seconds').innerHTML = "00";
+            return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+        document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+    }
+
+    // Запуск таймера
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Анимация появления элементов при прокрутке
+    function checkFadeIn() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkFadeIn);
+    window.addEventListener('load', checkFadeIn);
+
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Слайдер фотографий мест проведения
+    const sliderTrack = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Функция для обновления слайдера
+    function updateSlider() {
+        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Обновляем активную точку
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Следующий слайд
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    // Предыдущий слайд
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    // Автопрокрутка слайдера
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    // Обработчики событий для кнопок
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Обработчики событий для точек
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            currentSlide = parseInt(this.getAttribute('data-slide'));
+            updateSlider();
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    });
+
+    // Добавляем анимацию цветам лета
+    const colors = ['#ff7eb3', '#ffd166', '#a8e6cf', '#64b3d1'];
+    let currentColorIndex = 0;
+
+    function changeHeartColor() {
+        const hearts = document.querySelectorAll('.heart i');
+        hearts.forEach(heart => {
+            heart.style.color = colors[currentColorIndex];
+            heart.style.textShadow = `0 4px 8px ${colors[currentColorIndex]}40`;
+        });
+
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+
+    // Меняем цвет сердца каждые 3 секунды
+    setInterval(changeHeartColor, 3000);
+
+    // Система смены фотографий жениха и невесты
+    class PhotoSwitcher {
+        constructor(containerId, photosCount) {
+            this.container = document.getElementById(containerId);
+            this.photos = this.container.querySelectorAll('.person-photo');
+            this.indicators = this.container.querySelectorAll('.photo-indicator');
+            this.counter = this.container.querySelector('.photo-counter');
+            this.currentIndex = 0;
+            this.photosCount = photosCount;
+
+            // Добавляем обработчики событий
+            this.container.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('photo-indicator')) {
+                    this.nextPhoto();
+                }
+            });
+
+            // Обработчики для индикаторов
+            this.indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.showPhoto(index);
+                });
+            });
+
+            // Добавляем поддержку свайпа на мобильных
+            this.addSwipeSupport();
+
+            // Показываем первую фотографию
+            this.showPhoto(0);
+        }
+
+        nextPhoto() {
+            this.currentIndex = (this.currentIndex + 1) % this.photosCount;
+            this.showPhoto(this.currentIndex);
+        }
+
+        showPhoto(index) {
+            // Скрываем все фотографии
+            this.photos.forEach(photo => {
+                photo.classList.remove('active');
+            });
+
+            // Показываем выбранную фотографию
+            this.photos[index].classList.add('active');
+
+            // Обновляем индикаторы
+            this.indicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+
+            // Обновляем счетчик
+            this.counter.textContent = `${index + 1}/${this.photosCount}`;
+
+            // Обновляем текущий индекс
+            this.currentIndex = index;
+        }
+
+        addSwipeSupport() {
+            let startX = 0;
+            let endX = 0;
+
+            this.container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            this.container.addEventListener('touchmove', (e) => {
+                endX = e.touches[0].clientX;
+            });
+
+            this.container.addEventListener('touchend', () => {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Свайп влево - следующая фотография
+                        this.nextPhoto();
+                    } else {
+                        // Свайп вправо - предыдущая фотография
+                        this.currentIndex = (this.currentIndex - 1 + this.photosCount) % this.photosCount;
+                        this.showPhoto(this.currentIndex);
+                    }
+                }
+            });
+        }
+    }
+
+    // Инициализация фото-свитчеров
+    // Для Вики: 4 фотографии
+    const brideSwitcher = new PhotoSwitcher('bride-photos', 4);
+
+    // Для Артёма: 5 фотографий
+    const groomSwitcher = new PhotoSwitcher('groom-photos', 5);
+
+    // Автоматическая смена фотографий каждые 5 секунд
+    setInterval(() => {
+        brideSwitcher.nextPhoto();
+    }, 5000);
+
+    setInterval(() => {
+        groomSwitcher.nextPhoto();
+    }, 4500); // Немного другое время для разнообразия
+</script>
+</body>
+</html>
