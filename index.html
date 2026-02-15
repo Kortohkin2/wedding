@@ -20,6 +20,37 @@
             color: #4a4a4a;
             background-color: #fefaf7;
             overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Режим для слабовидящих */
+        body.accessible-mode {
+            font-size: 120%;
+            line-height: 1.6;
+        }
+
+        body.accessible-mode .btn,
+        body.accessible-mode .detail-card,
+        body.accessible-mode .form-container,
+        body.accessible-mode .story-text {
+            padding: 1.2em;
+        }
+
+        body.accessible-mode h1 {
+            font-size: clamp(3.5rem, 18vw, 6rem);
+        }
+
+        body.accessible-mode h2 {
+            font-size: clamp(3rem, 10vw, 4rem);
+        }
+
+        body.accessible-mode h3 {
+            font-size: clamp(2rem, 7vw, 2.5rem);
+        }
+
+        body.accessible-mode p,
+        body.accessible-mode .story-text p {
+            font-size: 1.2rem;
         }
 
         h1, h2, h3, h4 {
@@ -32,6 +63,46 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 16px;
+        }
+
+        /* Кнопка для слабовидящих */
+        .accessibility-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #b28076;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(178, 128, 118, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .accessibility-btn:hover {
+            background-color: #c49a8f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(178, 128, 118, 0.4);
+        }
+
+        .accessibility-btn i {
+            font-size: 1.2rem;
+        }
+
+        body.accessible-mode .accessibility-btn {
+            background-color: #4a4a4a;
+            border-color: #ffd700;
+        }
+
+        body.accessible-mode .accessibility-btn i {
+            color: #ffd700;
         }
 
         /* Декоративный элемент */
@@ -97,21 +168,29 @@
         }
 
         .hero .date {
-            font-size: clamp(1.5rem, 6vw, 2rem);
-            padding: 12px 30px;
+            font-size: clamp(2rem, 8vw, 3rem); /* Увеличен шрифт даты */
+            padding: 15px 35px;
             background-color: rgba(255, 255, 255, 0.5);
             border-radius: 40px;
             color: #b28076;
-            border: 1px solid #e6c3c3;
+            border: 2px solid #e6c3c3;
             backdrop-filter: blur(5px);
             font-family: 'Cormorant Garamond', serif;
             margin-bottom: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(178, 128, 118, 0.2);
+        }
+
+        body.accessible-mode .hero .date {
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            padding: 20px 45px;
+            border-width: 3px;
         }
 
         .hero .location {
-            font-size: 1.2rem;
+            font-size: 1.4rem; /* Увеличен */
             color: #b99a91;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .hero .btn {
@@ -141,7 +220,12 @@
             box-shadow: 0 8px 20px rgba(178, 128, 118, 0.4);
         }
 
-        /* Секция истории - ИСПРАВЛЕНО ДЛЯ МОБИЛЬНЫХ */
+        body.accessible-mode .btn {
+            padding: 20px 50px;
+            font-size: 1.3rem;
+        }
+
+        /* Секция истории */
         .story {
             padding: 40px 0;
             background-color: #fff9f5;
@@ -231,6 +315,16 @@
             height: 8px;
         }
 
+        body.accessible-mode .photo-indicator {
+            width: 12px;
+            height: 12px;
+        }
+
+        body.accessible-mode .photo-indicator.active {
+            width: 16px;
+            height: 16px;
+        }
+
         .photo-counter {
             position: absolute;
             top: 8px;
@@ -247,6 +341,12 @@
             font-size: 0.75rem;
             z-index: 5;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body.accessible-mode .photo-counter {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
         }
 
         .person h3 {
@@ -286,6 +386,11 @@
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(178, 128, 118, 0.1);
+        }
+
+        body.accessible-mode .story-text {
+            font-size: 1.2rem;
+            padding: 35px 30px;
         }
 
         /* Слайдер фотографий */
@@ -366,6 +471,12 @@
             transform: scale(0.95);
         }
 
+        body.accessible-mode .slider-btn {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+
         .slider-dots {
             display: flex;
             gap: 10px;
@@ -387,6 +498,15 @@
             background-color: #b28076;
             width: 20px;
             border-radius: 10px;
+        }
+
+        body.accessible-mode .slider-dot {
+            width: 12px;
+            height: 12px;
+        }
+
+        body.accessible-mode .slider-dot.active {
+            width: 30px;
         }
 
         /* Секция деталей */
@@ -441,6 +561,18 @@
             font-size: 0.85rem;
         }
 
+        body.accessible-mode .detail-card {
+            padding: 35px 25px;
+        }
+
+        body.accessible-mode .detail-card h3 {
+            font-size: 1.6rem;
+        }
+
+        body.accessible-mode .detail-card p {
+            font-size: 1.1rem;
+        }
+
         /* Таймер */
         .countdown {
             background: linear-gradient(135deg, #fceae5, #f5dbd2);
@@ -489,6 +621,19 @@
             text-transform: uppercase;
             color: #8b6b6b;
             letter-spacing: 1px;
+        }
+
+        body.accessible-mode .countdown-item {
+            min-width: 90px;
+            padding: 15px 12px;
+        }
+
+        body.accessible-mode .countdown-number {
+            font-size: 2rem;
+        }
+
+        body.accessible-mode .countdown-label {
+            font-size: 0.9rem;
         }
 
         /* Секция RSVP */
@@ -550,6 +695,11 @@
             font-size: 0.9rem;
         }
 
+        body.accessible-mode .form-info p,
+        body.accessible-mode .form-alternative a {
+            font-size: 1.1rem;
+        }
+
         /* Футер */
         footer {
             background-color: #b28076;
@@ -599,6 +749,16 @@
             transform: scale(0.95);
         }
 
+        body.accessible-mode footer p {
+            font-size: 1.1rem;
+        }
+
+        body.accessible-mode .social-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.4rem;
+        }
+
         .copyright {
             margin-top: 25px;
             padding-top: 15px;
@@ -619,8 +779,15 @@
             transform: translateY(0);
         }
 
-        /* Мобильные улучшения - ПОЛНОСТЬЮ ПЕРЕРАБОТАНО */
+        /* Мобильные улучшения */
         @media (max-width: 768px) {
+            .accessibility-btn {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
             .story {
                 padding: 30px 0;
             }
@@ -678,6 +845,11 @@
                 font-size: 0.95rem;
                 margin-top: 15px;
             }
+
+            body.accessible-mode .accessibility-btn {
+                padding: 10px 18px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -721,6 +893,11 @@
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
+
+            .hero .date {
+                font-size: 1.8rem;
+                padding: 12px 25px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -754,6 +931,12 @@
     </style>
 </head>
 <body>
+<!-- Кнопка для слабовидящих -->
+<button class="accessibility-btn" id="accessibilityToggle">
+    <i class="fas fa-glasses"></i>
+    <span>Увеличить текст</span>
+</button>
+
 <!-- Герой-секция -->
 <section class="hero" id="home">
     <h1>Артём & Виктория</h1>
@@ -838,9 +1021,6 @@
                     <div class="slider-slide">
                         <img src="img/АВ7.jpg" alt="Фото 6">
                     </div>
-                    <div class="slider-slide">
-                        <img src="img/АВ8.jpg" alt="Фото 7">
-                    </div>
                 </div>
             </div>
 
@@ -855,7 +1035,6 @@
                     <button class="slider-dot" data-index="3"></button>
                     <button class="slider-dot" data-index="4"></button>
                     <button class="slider-dot" data-index="5"></button>
-                    <button class="slider-dot" data-index="6"></button>
                 </div>
                 <button class="slider-btn" id="photoNextBtn">
                     <i class="fas fa-chevron-right"></i>
@@ -891,6 +1070,7 @@
                 <p>24 июля 2026, 16:00</p>
                 <p>Гранд Отель «Аристократъ»</p>
                 <p>пос. Молодёжный, 1А, Красносельский р-н</p>
+                <p><em>Трансфер от ЗАГСа</em></p>
             </div>
         </div>
     </div>
@@ -929,7 +1109,7 @@
         <h2 class="section-title fade-in">Подтвердите участие</h2>
 
         <div class="form-info fade-in">
-            <p>Пожалуйста, заполните форму.</p>
+            <p>Пожалуйста, заполните форму до 10 июля 2026 года.</p>
             <p>Это поможет нам лучше подготовиться к празднику.</p>
         </div>
 
@@ -950,6 +1130,16 @@
     <div class="container">
         <h3>С любовью, Артём и Виктория</h3>
         <p>24 июля 2026 года мы станем семьёй и будем рады разделить этот день с вами</p>
+
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <p>По всем вопросам: +7 (999) 456-78-90 | wedding.artemvika@example.com</p>
+
         <div class="copyright">
             © 2026 Артём и Виктория
         </div>
@@ -1005,6 +1195,20 @@
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
+    });
+
+    // Кнопка для слабовидящих
+    const accessibilityBtn = document.getElementById('accessibilityToggle');
+    accessibilityBtn.addEventListener('click', function() {
+        document.body.classList.toggle('accessible-mode');
+
+        // Меняем текст кнопки
+        const span = this.querySelector('span');
+        if (document.body.classList.contains('accessible-mode')) {
+            span.textContent = 'Обычная версия';
+        } else {
+            span.textContent = 'Версия для слабовидящих';
+        }
     });
 
     // Универсальный переключатель для обоих фото
